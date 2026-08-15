@@ -1,0 +1,81 @@
+<svg width="1200" height="260" viewBox="0 0 1200 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sweepGrad" cx="170" cy="130" r="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6FFFB0" stop-opacity="0.65"/>
+      <stop offset="70%" stop-color="#6FFFB0" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#6FFFB0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#05080d"/>
+      <stop offset="100%" stop-color="#0a141c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="260" rx="14" fill="url(#bgGrad)"/>
+  <rect x="0.5" y="0.5" width="1199" height="259" rx="14" fill="none" stroke="#6FFFB0" stroke-opacity="0.12"/>
+
+  <!-- radar scope -->
+  <g>
+    <circle cx="170" cy="130" r="100" fill="none" stroke="#6FFFB0" stroke-opacity="0.15"/>
+    <circle cx="170" cy="130" r="72"  fill="none" stroke="#6FFFB0" stroke-opacity="0.12"/>
+    <circle cx="170" cy="130" r="44"  fill="none" stroke="#6FFFB0" stroke-opacity="0.10"/>
+    <line x1="70"  y1="130" x2="270" y2="130" stroke="#6FFFB0" stroke-opacity="0.08"/>
+    <line x1="170" y1="30"  x2="170" y2="230" stroke="#6FFFB0" stroke-opacity="0.08"/>
+    <line x1="99"  y1="59"  x2="241" y2="201" stroke="#6FFFB0" stroke-opacity="0.06"/>
+    <line x1="99"  y1="201" x2="241" y2="59"  stroke="#6FFFB0" stroke-opacity="0.06"/>
+
+    <!-- rotating sweep -->
+    <g>
+      <path d="M170,130 L266.6,104.1 A100,100 0 0 1 266.6,155.9 Z" fill="url(#sweepGrad)"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 170 130" to="360 170 130" dur="4s" repeatCount="indefinite"/>
+    </g>
+
+    <circle cx="170" cy="130" r="100" fill="none" stroke="#6FFFB0" stroke-opacity="0.45" stroke-width="1.5"/>
+
+    <!-- traffic blips -->
+    <circle cx="205" cy="95"  r="3" fill="#4FD8EA">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="130" cy="160" r="3" fill="#4FD8EA">
+      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="3.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="215" cy="175" r="3" fill="#4FD8EA">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="140" cy="90" r="4" fill="#FFB020">
+      <animate attributeName="opacity" values="1;0.3;1" dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- wordmark -->
+  <text x="320" y="108" font-family="'JetBrains Mono', Consolas, monospace" font-size="32" font-weight="700" fill="#E8F4EF" letter-spacing="1">
+    GLOBAL FLIGHT DISRUPTION
+  </text>
+  <text x="320" y="146" font-family="'JetBrains Mono', Consolas, monospace" font-size="32" font-weight="700" fill="#6FFFB0" letter-spacing="1">
+    PREDICTOR
+  </text>
+  <text x="321" y="172" font-family="'JetBrains Mono', Consolas, monospace" font-size="13" fill="#5E7A6E" letter-spacing="2">
+    END-TO-END MLOPS · ZERO-COST · LIVE ATC-STYLE INFERENCE RADAR
+  </text>
+
+  <!-- tech pills -->
+  <g font-family="'JetBrains Mono', Consolas, monospace" font-size="11" letter-spacing="1">
+    <rect x="321" y="196" width="76"  height="24" rx="4" fill="none" stroke="#4FD8EA" stroke-opacity="0.35"/>
+    <text x="333" y="212" fill="#4FD8EA">FASTAPI</text>
+
+    <rect x="405" y="196" width="76"  height="24" rx="4" fill="none" stroke="#4FD8EA" stroke-opacity="0.35"/>
+    <text x="417" y="212" fill="#4FD8EA">DUCKDB</text>
+
+    <rect x="489" y="196" width="82"  height="24" rx="4" fill="none" stroke="#6FFFB0" stroke-opacity="0.35"/>
+    <text x="501" y="212" fill="#6FFFB0">XGBOOST</text>
+
+    <rect x="579" y="196" width="78"  height="24" rx="4" fill="none" stroke="#6FFFB0" stroke-opacity="0.35"/>
+    <text x="591" y="212" fill="#6FFFB0">MLFLOW</text>
+
+    <rect x="665" y="196" width="76"  height="24" rx="4" fill="none" stroke="#FFB020" stroke-opacity="0.35"/>
+    <text x="677" y="212" fill="#FFB020">DOCKER</text>
+
+    <rect x="749" y="196" width="86"  height="24" rx="4" fill="none" stroke="#FFB020" stroke-opacity="0.35"/>
+    <text x="761" y="212" fill="#FFB020">THREE.JS</text>
+  </g>
+</svg>

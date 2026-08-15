@@ -1,0 +1,25 @@
+# --- Python & Environments ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# --- Project Specific Data & Databases ---
+data/
+*.db
+*.sqlite3
+
+# --- MLflow Tracking & Artifacts ---
+mlruns/
+mlartifacts/
+*.db-shm
+*.db-wal
+
+# --- IDEs & Operating Systems ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

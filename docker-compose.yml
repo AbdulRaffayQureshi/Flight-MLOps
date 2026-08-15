@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # ----------------------------------------
+  # Service 1: FastAPI & The Data Scraper
+  # ----------------------------------------
+  api:
+    build: .
+    container_name: flight_mlops_api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Map our local folders so the database doesn't delete when the container stops
+      - ./data:/workspace/data
+      # Map the app folder so we can edit Python files without rebuilding Docker
+      - ./app:/workspace/app
+    environment:
+      # Tell our FastAPI app where the MLflow server is located
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    depends_on:
+      - mlflow
+
+ # ----------------------------------------
+  # Service 2: MLflow Experiment Tracking
+  # ----------------------------------------
+  mlflow:
+    build: .
+    container_name: flight_mlops_mlflow
+    command: >
+      mlflow server 
+      --host 0.0.0.0 
+      --port 5000 
+      --backend-store-uri sqlite:////workspace/mlruns/mlflow.db 
+      --serve-artifacts 
+      --artifacts-destination /workspace/mlruns
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/workspace/mlruns
