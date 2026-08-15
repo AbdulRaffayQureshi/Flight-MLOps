@@ -173,6 +173,11 @@ docker exec -it flight_mlops_api python app/ml/train.py
 | `/api/latest-data` | `GET` | Most recent ingested traffic + weather snapshot |
 | `/api/predict` | `GET` | Current disruption risk level + probability |
 
+# Image
+
+<img width="1346" height="754" alt="image" src="https://github.com/user-attachments/assets/4bf674f1-37b5-404c-8b9f-3e20ebe442aa" />
+
+
 ## Roadmap
 
 - [ ] Swap the threading scheduler for APScheduler with persistent job state
